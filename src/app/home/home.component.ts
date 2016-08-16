@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  collection = [];
 
   constructor() {
-    // Do stuff
+    for (let i = 1; i <= 25; i++) {
+      this.collection.push(`item ${i}`);
+    }
   }
 
   ngOnInit() {

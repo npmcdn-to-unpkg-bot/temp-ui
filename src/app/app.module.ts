@@ -9,6 +9,23 @@ import { AboutComponent } from './about/about.component';
 import { ApiService } from './shared';
 import { routing } from './app.routing';
 
+import { PaginatePipe } from './pagination/paginate.pipe';
+import { PaginationService } from './pagination/paginate.service';
+import { PaginationControlsComponent } from './pagination/pagination-control.component';
+
+
+import {
+  NglPick,
+  NglPickOption,
+
+  NglDropdown,
+  NglDropdownTrigger,
+  NglDropdownItem,
+
+  NglPicklist,
+  NglPicklistItemTemplate
+} from './multiselect';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -19,10 +36,24 @@ import { routing } from './app.routing';
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+
+    PaginatePipe,
+    PaginationControlsComponent,
+
+    NglPick,
+    NglPickOption,
+
+    NglDropdown,
+    NglDropdownTrigger,
+    NglDropdownItem,
+
+    NglPicklist,
+    NglPicklistItemTemplate
   ],
   providers: [
-    ApiService
+    ApiService,
+    PaginationService
   ],
   bootstrap: [AppComponent]
 })
