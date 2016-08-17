@@ -10,13 +10,10 @@ import {toBoolean} from '../../utils/util';
 @Component({
   selector: 'ngl-picklist[nglPick]',
   templateUrl: './picklist.html',
+  styleUrls: ['./picklist.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   directives: [NglDropdown, NglDropdownTrigger, NglDropdownItem, NglPickOption],
-  styles: [`
-    li.slds-is-active {
-      background-color: #F4F6F9;
-    }`,
-  ],
+  
 })
 export class NglPicklist {
 

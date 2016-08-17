@@ -1,15 +1,35 @@
-<div nglDropdown="nglDropdown" [open]="open" (openChange)="openChange.emit($event)" [ngClass]="{'slds-picklist--fluid': fluid}" class="slds-picklist">
+<div nglDropdown="nglDropdown" [open]="open" (openChange)="openChange.emit($event)" [ngClass]="{'slds-picklist--fluid': fluid}" class="rkrt-picklist">
   
-  <button type="button" nglDropdownTrigger="nglDropdownTrigger" [disabled]="disabled" class="slds-button slds-button--neutral slds-picklist__label">
+  <button type="button" nglDropdownTrigger="nglDropdownTrigger" [disabled]="disabled" class="rkrt-drop-button rkrt-picklist__label">
     <ng-content></ng-content>
   </button>
   
-  <div [ngClass]="{ 'slds-p-top--none': hasFilter }" class="slds-dropdown">
-    <input *ngIf="hasFilter" #filterInput filterInput="#filterInput" type="text" [placeholder]="filterPlaceholder" [ngModel]="filter" (ngModelChange)="filterChange($event)" (keydown.enter)="onFilterPick()" (keydown.arrowdown)="setFilterActive(1, $event)" (keydown.arrowup)="setFilterActive(-1, $event)" (focus)="onFilterFocus()" (blur)="onFilterBlur()" class="slds-input"/>
-    <ul role="menu" [ngClass]="dropdownListClass" class="dropdown__list">
-      <li *ngFor="let item of filteredData; let i = index" [nglPickOption]="item" nglPickActiveClass="slds-is-selected" [class.slds-is-active]="isOptionActive(i)" (mouseover)="onOptionHover(i)" class="slds-dropdown__item">
+  <div [ngClass]="{ 'rkrt-p-top--none': hasFilter }" class="rkrt-dropdown">
+    <input 
+      *ngIf="hasFilter" 
+      #filterInput 
+      filterInput="#filterInput" 
+      type="text" 
+      [placeholder]="filterPlaceholder" 
+      [ngModel]="filter" 
+      (ngModelChange)="filterChange($event)" 
+      (keydown.enter)="onFilterPick()" 
+      (keydown.arrowdown)="setFilterActive(1, $event)" 
+      (keydown.arrowup)="setFilterActive(-1, $event)" 
+      (focus)="onFilterFocus()" 
+      (blur)="onFilterBlur()" 
+      class="rkrt-input"/>
+
+    <ul role="menu" [ngClass]="dropdownListClass" class="rkrt-dropdown__list">
+      <li 
+        *ngFor="let item of filteredData; let i = index" 
+        [nglPickOption]="item" 
+        nglPickActiveClass="rkrt-is-selected" 
+        [class.slds-is-active]="isOptionActive(i)" 
+        (mouseover)="onOptionHover(i)" 
+        class="rkrt-dropdown__item">
         <a role="menuitem" nglDropdownItem="nglDropdownItem">
-          <p class="slds-truncate">
+          <p class="rkrt-truncate">
             <template [ngTemplateOutlet]="itemTemplate?.templateRef" [ngOutletContext]="{$implicit: item}"></template>
           </p>
         </a>

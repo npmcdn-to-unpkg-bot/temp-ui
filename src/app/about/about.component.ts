@@ -14,6 +14,12 @@ export class AboutComponent implements OnInit {
     { value: 'Item 1', icon: 'kanban' },
     { value: 'Item 2', icon: 'side_list' },
     { value: 'Item 3', icon: 'table' },
+    { value: 'Item 12', icon: 'kanban' },
+    { value: 'Item 23', icon: 'side_list' },
+    { value: 'Item 34', icon: 'table' },
+    { value: 'Item 15', icon: 'kanban' },
+    { value: 'Item 26', icon: 'side_list' },
+    { value: 'Item 37', icon: 'table' },
   ];
 
   onToggle($event: Event) {

@@ -7,8 +7,8 @@ const openEventEmitter = new EventEmitter<any>();
 @Directive({
   selector: '[nglDropdown]',
   host: {
-    '[class.slds-dropdown-trigger]': 'true',
-    '[class.slds-dropdown-trigger--click]': 'true',
+    '[class.rkrt-dropdown-trigger]': 'true',
+    '[class.rkrt-dropdown-trigger--click]': 'true',
   },
 })
 export class NglDropdown implements OnInit, OnDestroy {
@@ -27,7 +27,7 @@ export class NglDropdown implements OnInit, OnDestroy {
   @Input() handlePageEvents = true;
   @ContentChildren(NglDropdownItem, {descendants: true}) items: QueryList<NglDropdownItem>;
   @Output('openChange') isOpenChange = new EventEmitter<boolean>();
-  @HostBinding('class.slds-is-open')
+  @HostBinding('class.rkrt-is-open')
   @HostBinding('attr.aria-expanded')
   get __isOpen() {
     return this.isOpen;
